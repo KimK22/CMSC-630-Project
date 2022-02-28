@@ -1,1 +1,8 @@
+Info: 
 
+1) Saves all new images and histogram information in a structure. This makes it easier to look through later on, and easier to call for future functions.
+2) Before running functions, convert all images to chosen color spectrum. This will be used in any future image processing instead of calling the original image file.
+3) Added data performance measures:
+      Displays total processing time and average time per image for each class per procedure.
+      However, it does not save this time in a variable.
+      
