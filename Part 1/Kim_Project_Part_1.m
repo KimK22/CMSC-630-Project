@@ -72,7 +72,6 @@ Fscale    = sum(Fweight(:));  % Scaling factor for the weights (sum = 1)
 
 Mweight   = [ 1 2 1; 2 3 2; 1 2 1]; % weight vector for median filter
 
-
 %% 2) Histogram Calculations
 % Create Class structure with all images, color conversion
 Class = struct();
@@ -173,8 +172,8 @@ for i = 1:numClass
        [ImgSP{j}, Hsp{j}] = SaltPepperNoise(Class(i).image{j}, Dnoise);
         Hsum = Hsum + Hsp{j}; 
     end
-    Class(i).ImgSP01 = ImgSP;
-    Class(i).Hsp01   = Hsp;
+    Class(i).ImgSP = ImgSP;
+    Class(i).Hsp   = Hsp;
     Havg(:,i) = round(Hsum ./ numImg);
     Htime(i) = toc;
     avgTime(i) = Htime(i) / numImg;
@@ -197,8 +196,8 @@ for i = 1:numClass
        [ImgG{j}, Hgauss{j}] = GaussNoise(Class(i).image{j}, Gmean, Gvar);
        Hsum = Hsum + Hgauss{j};
     end
-    Class(i).ImgGauss1050 = ImgG;
-    Class(i).Hgauss1050   = Hgauss;
+    Class(i).ImgGauss = ImgG;
+    Class(i).Hgauss   = Hgauss;
     
     Havg(:,i) = round(Hsum ./ numImg);
     Htime(i) = toc;
@@ -222,8 +221,8 @@ for i = 1:numClass
    [ImgLin{j}, HLin{j}] = LinearFilter(Class(i).image{j}, Fweight, Fscale);
        Hsum = Hsum + HLin{j};
     end
-    Class(i).ImgLineargauss = ImgLin;
-    Class(i).HLinearguass   = HLin;
+    Class(i).ImgLinear = ImgLin;
+    Class(i).HLinear   = HLin;
     
     Htime(i) = toc;
     Havg(:,i) = round(Hsum ./ numImg);
