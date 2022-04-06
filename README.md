@@ -15,3 +15,15 @@ Requirements:
   6) Selected image quantization technique for user-specified levels
   7) Filter Options: Linear (mask size and weight) ; Median (mask size and weight)
   8) Display Performance Measurements: Processing time of batch and average per image;  MSQE for image quantization levels
+
+Part 2: Image Segmentation
+Due:    April 10, 2022
+
+Goal: Design a program that can implement different image segmentation techniques. Must work in a batch setting given the location of the images. 
+
+Requirements: 
+  1) Implement one selected edge detection algorithm
+  2) Implement dilation adn erosion operators
+  3) Impement two segmentation techniques
+        - Histogram Thresholding: single threshold that divides the image into 2 segments: foreground (cells) and background (everything else)
+        - K-means Clustering: examine effect of different values of k parameter on the segmentation
